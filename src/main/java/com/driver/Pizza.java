@@ -75,6 +75,6 @@ public class Pizza {
         if(isTakeaway == true) bill = bill + "Paperbag Added: 20" + "\n";
         bill = bill + "Total Price: " + price + "\n";
 
-        return this.bill + "\n";
+        return this.bill;
     }
 }
