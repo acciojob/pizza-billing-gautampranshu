@@ -12,6 +12,8 @@ public class Pizza {
 
     private boolean isToppingadded;
 
+    private boolean isBillGenerated;
+
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         if(isVeg == true)
@@ -66,15 +68,19 @@ public class Pizza {
     }
 
     public String getBill(){
-        if(isCheeseadded = true) bill = bill + "Extra Cheese Added: 80" + "\n" ;
-        if(isToppingadded == true)
+        if(isBillGenerated == false)
         {
-            if(isVeg == true) bill = bill + "Extra Toppings Added: 70" + "\n";
-            else bill = bill + "Extra Toppings Added: 120" + "\n";
+            if (isCheeseadded = true) bill = bill + "Extra Cheese Added: 80" + "\n";
+            if (isToppingadded == true)
+            {
+                if (isVeg == true) bill = bill + "Extra Toppings Added: 70" + "\n";
+                else bill = bill + "Extra Toppings Added: 120" + "\n";
+            }
+            if (isTakeaway == true) bill = bill + "Paperbag Added: 20" + "\n";
+            bill = bill + "Total Price: " + price + "\n";
+           // return bill;
         }
-        if(isTakeaway == true) bill = bill + "Paperbag Added: 20" + "\n";
-        bill = bill + "Total Price: " + price + "\n";
-
+        isBillGenerated = true;
         return this.bill;
     }
 }
